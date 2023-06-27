@@ -12,7 +12,9 @@ const camera = new THREE.PerspectiveCamera(
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+
+const webglElement = document.getElementById("webgl");
+webglElement.appendChild(renderer.domElement);
 
 camera.position.set(0, 0.1, 1);
 
@@ -33,6 +35,8 @@ light.position.set(10, 10, 10);
 scene.add(light);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.enablePan = false;
 
 const animate = function () {
   requestAnimationFrame(animate);
@@ -42,12 +46,8 @@ const animate = function () {
 
 animate();
 
-// ブラウザのリサイズ対応
 window.addEventListener("resize", () => {
-  // レンダラーのサイズを随時更新
   renderer.setSize(window.innerWidth, window.innerHeight);
-
-  // カメラのアスペクト比を修正
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 });
