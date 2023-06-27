@@ -20,7 +20,7 @@ camera.position.set(0, 0.1, 1);
 
 const loader = new GLTFLoader();
 loader.load(
-  "./public/Apple.glb",
+  "/Apple.glb",
   function (gltf) {
     scene.add(gltf.scene);
   },
