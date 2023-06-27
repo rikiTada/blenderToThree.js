@@ -17,7 +17,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  cursor: pointer;
+  cursor: -webkit-grab;
+}
+#webgl:active {
+  cursor: -webkit-grabbing;
 }
 
 header {
@@ -49,6 +52,7 @@ header nav ul li a {
   text-decoration: none;
   color: rgb(51, 51, 51);
   position: relative;
+  cursor: no-drop;
 }
 
 header nav ul li a::after {
