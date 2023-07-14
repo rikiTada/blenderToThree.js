@@ -108,7 +108,7 @@ header nav ul li a:hover::after {
   }
 
   header nav ul li {
-    display: block;
+    display: none;
     margin-right: 0;
     margin-bottom: 4px;
     font-size: 0.8rem;
